@@ -1,0 +1,141 @@
+{% include 'adminheader.html' %}
+
+
+   <section style="background: url(/static/images/m2.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">
+<center>
+	<form method="post">
+{% if data['updater'] %}
+		<h1>UPDATE MEDICAL SHOP</h1>
+
+
+
+		<table class="table" style="width:  700px">
+		<tr>
+			<th>SHOP NAME</th>
+			<td><input type="text" name="shopname"  class="form-control" value="{{data['updater'][0]['shopname']}}"></td>
+		</tr>
+		<tr>
+			<th>PLACE</th>
+			<td><input type="text" name="place"  class="form-control" id="lat"  value="{{data['updater'][0]['place']}}" >
+
+		</tr>
+		<tr>
+			<th>CITY</th>
+			<td><input type="text" name="city" required class="form-control"  value="{{data['updater'][0]['city']}}"></td>
+		</tr>
+		<tr>
+			<th>DISTRICT</th>
+			<td><input type="text" name="district" required class="form-control"  value="{{data['updater'][0]['district']}}"></td>
+		</tr>
+
+		<tr>
+			<th>PHONE</th>
+			<td><input type="text" name="phone"  class="form-control" value="{{data['updater'][0]['phone']}}"></td>
+		</tr>
+		<tr>
+			<th>EMAIL</th>
+			<td>
+			<input type="email" name="email"  class="form-control" value="{{data['updater'][0]['email']}}"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-primary"></td>
+		</tr>
+	</table>
+
+
+
+
+		{% else %}
+
+		
+	<h1>MEDICAL SHOP REGISTRATION</h1>
+	<table class="table" style="width:  700px">
+		<tr>
+			<th> NAME</th>
+			<td><input type="text" name="shopname" required class="form-control"></td>
+		</tr>
+		<tr>
+			<th>PLACE</th>
+			<td><input type="text" name="place" required class="form-control"></td>
+		</tr>
+		<tr>
+			<th>CITY</th>
+			<td><input type="text" name="city" required class="form-control"></td>
+		</tr>
+		<tr>
+			<th>DISTRICT</th>
+			<td><input type="text" name="district" required class="form-control"></td>
+		</tr>
+		
+		<tr>
+			<th>PHONE</th>
+			<td><input type="text" name="phone" required class="form-control"></td>
+		</tr>
+		<tr>
+			<th>EMAIL</th>
+			<td>
+			<input type="email" name="email" required class="form-control"></td>
+		</tr>
+		
+		
+		<tr>
+			<th>USER NAME</th>
+			<td><input type="uname" name="uname" required minlength="5" placeholder="User Name Must Be Atleast 5 Charecter " class="form-control" ></td>
+		</tr>
+		<tr>
+			<th>PASSWORD</th>
+			<td><input type="password" name="password" required minlength="8" placeholder="Password Must Be Atleast 8 Charecter" class="form-control"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" value="register" class="btn btn-primary"></td>
+		</tr>
+	</table>
+{% if data['mshop'] %}
+		<h1>MEDICAL SHOPS ADDED IN OUR SYSTEM</h1>
+		<table class="table" width="600px">
+			<tr>
+				<th>MEDICAL SHOP</th>
+				<th>PLACE</th>
+				<th>CITY</th>
+				<th>DISTRICT</th>
+				<th>PHONE</th>
+				<th>EMAIL</th>
+			</tr>
+			{% for row in data['mshop'] %}
+			<tr>
+				<td>{{ row['shopname'] }}</td>
+				<td>{{row ['place']}}</td>
+				<td>{{ row['city']}}</td>
+				<td>{{row['district']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+				<td><a href="?action=update&id={{ row['medicalshop_id'] }}" class="btn btn-warning">UPDATE</a></td>
+				<td><a href="?action=delete&id={{ row['medicalshop_id'] }}" class="btn btn-danger" >DELETE</a></td>
+			</tr>
+			{% endfor%}
+		</table>
+		{% else %}
+		<h2>NO MEDICAL SHOPS ADDED IN OUR SYSTEM</h2>
+		{% endif %}
+		{% endif %}
+	</form>
+</center>
+
+  </div>
+           </div>
+          
+       </div>  
+      
+   </section>
+		   		
+
+			
+
+{% include 'footer.html' %}

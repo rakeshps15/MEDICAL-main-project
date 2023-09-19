@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.medicaldelivery">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo1"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/logo1"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MedicalDelivery"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".AddAvailableTimes"
+            android:exported="false" />
+        <activity
+            android:name=".DocatorAddTiming"
+            android:exported="false" />
+        <activity
+            android:name=".user_uploaddoctor_prescription_to_medicalshop"
+            android:exported="false" />
+        <activity
+            android:name=".UserViewDoctorPrescription"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorUploadPrescription"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorViewCustomers"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorViewAppointments"
+            android:exported="false" />
+        <activity
+            android:name=".UserViewAppointments"
+            android:exported="false" />
+        <activity
+            android:name=".UserMakeAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".UserViewDoctors"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorHome"
+            android:exported="false" />
+        <activity android:name=".Deliveryviewrating" />
+        <activity android:name=".Userviewuploadedmedicine" />
+        <activity android:name=".Useruploadprescription" />
+        <activity android:name=".Userviewmedicalshop" />
+        <activity android:name=".Userregister" />
+        <activity android:name=".Deliveryhome" />
+        <activity android:name=".Deliveryregister" />
+        <activity android:name=".Userviewdeliveryboys" />
+        <activity android:name=".Deliveryvieworderspickedup" />
+        <activity android:name=".Deliveryviewordersdispatched" />
+        <activity android:name=".Login" />
+        <activity android:name=".Userhome" />
+        <activity android:name=".Usermakepayment" />
+        <activity android:name=".Usermakerate" />
+        <activity android:name=".Ipsettings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Usersendfeedback" />
+    </application>
+
+</manifest>
